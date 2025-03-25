@@ -37,7 +37,6 @@ El repositorio está organizado en las siguientes secciones principales:
 
 A continuación, se muestra una figura conceptual sobre el ciclo de vida del desarrollo de software:
 
-![Ciclo de vida del desarrollo de software](https://upload.wikimedia.org/wikipedia/commons/e/e2/SDLC_-_Software_Development_Life_Cycle.jpg)
 
 [Computadora](https://img.freepik.com/vector-premium/programador-feliz-codificacion-binaria-hombre-computadora-portatil_51635-8069.jpg)
 
