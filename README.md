@@ -38,7 +38,7 @@ El repositorio está organizado en las siguientes secciones principales:
 A continuación, se muestra una figura conceptual sobre el ciclo de vida del desarrollo de software:
 
 
-![Computadora](https://img.freepik.com/vector-premium/programador-feliz-codificacion-binaria-hombre-computadora-portatil_51635-8069.jpg)
+![Ciclodevida](https://i0.wp.com/www.sergestec.com/wp-content/uploads/2022/01/ciclo_de_vida_software.jpg?ssl=1)
 
 ## Referencias
 
