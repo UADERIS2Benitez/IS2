@@ -9,7 +9,7 @@ import sys
 
 def factorial(num):
     if num < 0:
-        return "Factorial de un número negativo no existe"
+        return f"Factorial de un número negativo ({num}) no existe"
     elif num == 0:
         return 1
     else:
@@ -19,26 +19,36 @@ def factorial(num):
             num -= 1
         return fact
 
-# Función para calcular factoriales en un rango
 def calculate_factorials(start, end):
     for num in range(start, end + 1):
         print(f"Factorial {num} ! es {factorial(num)}")
 
-# Verificar si se pasa un argumento
+# Manejo del rango
 if len(sys.argv) > 1:
     try:
-        # Parsear rango desde argumento
-        start, end = map(int, sys.argv[1].split('-'))
+        user_input = sys.argv[1]
+        if '-' in user_input:
+            parts = user_input.split('-')
+            start = int(parts[0]) if parts[0] else 1  # Si falta el inicio, usar 1
+            end = int(parts[1]) if len(parts) > 1 and parts[1] else 60  # Si falta el final, usar 60
+        else:
+            print("Debe ingresar un rango válido (ejemplo: -10, 4-8, 30-).")
+            sys.exit()
     except ValueError:
-        print("Debe ingresar un rango válido (ejemplo: 4-8).")
+        print("Debe ingresar un rango válido (ejemplo: -10, 4-8, 30-).")
         sys.exit()
 else:
     try:
-        # Solicitar rango al usuario
-        user_input = input("Ingrese un rango (ejemplo: 4-8): ")
-        start, end = map(int, user_input.split('-'))
+        user_input = input("Ingrese un rango (ejemplo: -10, 4-8, 30-): ")
+        if '-' in user_input:
+            parts = user_input.split('-')
+            start = int(parts[0]) if parts[0] else 1
+            end = int(parts[1]) if len(parts) > 1 and parts[1] else 60
+        else:
+            print("Debe ingresar un rango válido (ejemplo: -10, 4-8, 30-).")
+            sys.exit()
     except ValueError:
-        print("Debe ingresar un rango válido (ejemplo: 4-8).")
+        print("Debe ingresar un rango válido (ejemplo: -10, 4-8, 30-).")
         sys.exit()
 
 # Validar el rango
@@ -46,5 +56,5 @@ if start > end:
     print("El rango es inválido: el número inicial debe ser menor o igual al final.")
     sys.exit()
 
-# Calcular factoriales en el rango
+# Calcular y mostrar los factoriales
 calculate_factorials(start, end)
